@@ -4,26 +4,29 @@ var app = express();
 const url = require('url');
 app.use(cors()); // for all routes
 var port = process.env.PORT || 80 ;
-app.get('/', function(req, res) {
+app.get('/*', function(req, res) {
+ // console.log('req.originalUrl: ' + req.originalUrl +
+  // "--" +req.originalUrl.split("?").pop()) ;
+  //console.log(
+  //  "noutee://app.noutee.com" + req.originalUrl
+    //query: req.originalUrl.split("?").pop()
 
-    res.redirect(url.format({
-        pathname:"noutee://app.noutee.com",
-        query:req.query
-      }));
+  // ) ;
+    
+  
+  
+  res.redirect("noutee://app.noutee.com" + req.originalUrl ) ;
 
+      
 
-
-
-
-
-    //var info = {
+ //var info = {
 //'string_value': 'StackOverflow',
 //'number_value': 8476
 //}
 //res.json(info);
 // or
 /* res.send(JSON.stringify({
-string_value: 'StackOverflow',
+string_value: 'Somestring',
 number_value: 8476
 })) */
 //you can add a status code to the json response
